@@ -21,6 +21,7 @@ defmodule FreeKudos.ModelCase do
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
+      import FreeKudos.TestHelpers
       import FreeKudos.ModelCase
     end
   end

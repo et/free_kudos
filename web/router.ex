@@ -16,8 +16,9 @@ defmodule FreeKudos.Router do
   scope "/", FreeKudos do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
-    post "/", PageController, :create
+    get "/", AthleteController, :new
+    post "/", AthleteController, :create
+    get "/success", AthleteController, :success
   end
 
   # Other scopes may use custom stacks.

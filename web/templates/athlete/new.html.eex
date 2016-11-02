@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <h2>Strava Kudos</h2>
+  <p class="lead">Enter your Strava id:</p>
+  <p class="hint">e.g. https://www.strava.com/athletes/<strong>4489804</strong></p>
+
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, looks like that ID is invalid.</p>
+    </div>
+  <% end %>
+
+  <%= form_for @changeset, athlete_path(@conn, :create), fn f -> %>
+    <div class="form-group">
+      <%= text_input f, :strava_id, placeholder: "Strava ID", class: "form-control" %>
+      <%= error_tag f, :strava_id %>
+    </div>
+    <%= submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>
